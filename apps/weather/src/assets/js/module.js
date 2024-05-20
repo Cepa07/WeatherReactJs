@@ -39,12 +39,14 @@ export const getDate = function (dateUnix, timezone) {
 
 
 export const getTime = function (timeUnix, timezone) {
-    const date = new Date((timeUnix + timezone) * 1000)
-    const hours = date.getUTCHours()
-    const minutes = date.getUTCMinutes()
-    const period = hours >= 12 ? "PM" : "AM"
+    const date = new Date((timeUnix + timezone) * 1000);
+    const hours = date.getUTCHours();
+    const minutes = date.getUTCMinutes();
 
-    return `${hours % 12 || 12}:${minutes} ${period}`
+    const formattedHours = hours < 10 ? `0${hours}` : hours;
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+
+    return `${formattedHours}:${formattedMinutes}`;
 }
 
 
@@ -60,5 +62,5 @@ export const getHours = function (timeUnix, timezone) {
 };
 
 export const mps_to_kmh = mps => {
-    return (mps * 3600) / 1000
+    return (mps * 1)
 }

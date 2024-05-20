@@ -13,18 +13,18 @@ export const fetchData = function (URL, callback) {
 
 export const url = {
     currentWeather(lat, lon) {
-        return `https://api.openweathermap.org/data/2.5/weather?${lat}&${lon}&lang=ru&units=metric`
+        return `https://api.openweathermap.org/data/2.5/weather?${lat}&${lon}&lang=ru&units=metric&lang=ru`
     },
     forecast(lat, lon) {
-        return `https://api.openweathermap.org/data/2.5/forecast?${lat}&${lon}&units=metric`
+        return `https://api.openweathermap.org/data/2.5/forecast?${lat}&${lon}&units=metric&lang=ru`
     },
     airPollution(lat, lon) {
-        return `https://api.openweathermap.org/data/2.5/air_pollution?${lat}&${lon}`
+        return `https://api.openweathermap.org/data/2.5/air_pollution?${lat}&${lon}&lang=ru`
     },
     reverseGeo(lat, lon) {
-        return `https://api.openweathermap.org/geo/1.0/reverse?${lat}&${lon}&limit=5`
+        return `https://api.openweathermap.org/geo/1.0/reverse?${lat}&${lon}&limit=5&lang=ru`
      },
      geo(query) {
-        return `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5`
+        return `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&lang=ru`
      }
 }

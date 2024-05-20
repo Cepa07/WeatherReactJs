@@ -2,7 +2,6 @@
 
 'use strict';
 
-// import { query } from 'express';
 import {updateWeather, error404 } from '/src/app.jsx';
  const defaultLocation = "#/weather?lat=48.782102&lon=44.7779843" 
 

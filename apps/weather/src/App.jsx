@@ -72,6 +72,8 @@ searchField.addEventListener("input", function () {
 
 
 
+
+
 const  container = document.querySelector("[data-container]");
 const  loading = document.querySelector("[data-loading]");
 const currentLocationBtn = document.querySelector("[data-current-location-btn]");
@@ -112,6 +114,8 @@ export const updateWeather =function (lat ,lon ){
         const [{description,icon}] =weather;
         const card = document.createElement("div");
 		card.classList.add("card", "card-lg", "current-weather-card");
+
+		const mel = Math.floor(pressure * 0.75);
 
         card.innerHTML = `
 
@@ -196,7 +200,7 @@ export const updateWeather =function (lat ,lon ){
 						<div class="wrapper">
 							<span class="m-icon">airwave</span>
 
-							<p class="title-1">${pressure}<sub>hPa</sub></p>
+							<p class="title-1">${mel}<sub>mmHg</sub></p>
 						</div>
 					</div>
 
@@ -285,7 +289,7 @@ export const updateWeather =function (lat ,lon ){
 						<img src="./src/assets/images/weather_icons/direction.png" alt="direction" class="weather-icon"
 							width="48" height="48" loading="lazy" title="" style="transform: rotate(${windDirection - 180}deg)">
 
-						<p class="body-3">${parseInt(module.mps_to_kmh(windSpeed))} km/h</p>
+						<p class="body-3">${parseInt(module.mps_to_kmh(windSpeed))} м/c</p>
 					</div>
 				`;
 
@@ -296,7 +300,7 @@ export const updateWeather =function (lat ,lon ){
             }  
             
 			forecastSection.innerHTML = `
-            <h2 class="title-2" id="forecast-label">5 Days Forecast</h2>
+            <h2 class="title-2" id="forecast-label">Прогноз на 5 дней</h2>
 
             <div class="card card-lg forecast-card">
                 <ul data-forecast-list></ul>
