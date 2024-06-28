@@ -168,7 +168,7 @@ export const updateWeather =function (lat ,lon ){
 								<span class="m-icon">clear_day</span>
 
 								<div>
-									<p class="label-1">Восход солнца</p>
+									<p class="label-1">Восход</p>
 									<p class="title-1">${module.getTime(sunriseUnixUTC, timezone)}</p>
 								</div>
 							</div>
@@ -241,7 +241,7 @@ export const updateWeather =function (lat ,lon ){
 			hourlySection.innerHTML = `
 
             
-				<h2 class="title-2">Today at</h2>
+				<h2 class="title-2">Сегодня в</h2>
 
 				<div class="slider-container">
 					<ul class="slider-list" data-temp></ul>
